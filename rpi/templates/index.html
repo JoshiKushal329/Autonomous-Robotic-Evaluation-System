@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPi Answer Sheet Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Answer Sheet Checker</h1>
+            <p class="subtitle">Automated grading on Raspberry Pi</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section class="card">
+                <h2>📸 Upload Image</h2>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" accept=".jpg,.jpeg,.png,.bmp" hidden>
+                    <p>Drag & drop image here or <span class="link">click to browse</span></p>
+                    <small>Supported: JPG, PNG, BMP (max 50MB)</small>
+                </div>
+                <div id="uploadProgress" class="progress-bar hidden"></div>
+                <p id="uploadStatus" class="status"></p>
+            </section>
+
+            <!-- Answer Key Section -->
+            <section class="card">
+                <h2>📝 Answer Key</h2>
+                <div id="answerKeyContainer">
+                    <div class="answer-input">
+                        <label>Q1</label>
+                        <input type="text" class="answer-field" placeholder="Answer 1">
+                    </div>
+                </div>
+                <button id="addAnswerBtn" class="btn btn-secondary">+ Add Question</button>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="card">
+                <h2>⚙️ Settings</h2>
+                <div class="setting-row">
+                    <label for="threshold">Grading Threshold:</label>
+                    <input type="range" id="threshold" min="0.5" max="1.0" step="0.05" value="0.70">
+                    <span id="thresholdValue">70%</span>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="actions">
+                <button id="gradeBtn" class="btn btn-primary">🚀 Grade Answer Sheet</button>
+                <button id="clearBtn" class="btn btn-secondary">🔄 Clear All</button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card hidden" id="resultsSection">
+                <h2>📊 Results</h2>
+                <div id="resultsSummary" class="summary"></div>
+                <div id="resultsDetails" class="details"></div>
+            </section>
+
+            <!-- History Section -->
+            <section class="card">
+                <h2>📚 History</h2>
+                <div id="historyList" class="history-list">
+                    <p class="placeholder">No grading history yet</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Answer Sheet Checker v1.0.0 | Running on Raspberry Pi</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
