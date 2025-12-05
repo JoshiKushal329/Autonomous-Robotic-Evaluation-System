@@ -315,20 +315,7 @@ Output: `"photosynthesis converts light energy chemical energy"`
 - [ ] Multi-language support
 - [ ] Handwriting style adaptation
 
-## 📝 License
 
-MIT License
-
-## 🤝 Support
-
-For issues or questions:
-1. Check the **Troubleshooting** section above
-2. Review code comments in `src/` modules
-3. Check image quality and answer key formatting
-
----
-
-**Version**: 1.0.0 (Stable)  
 **Last Updated**: December 4, 2025  
 **Python Version**: 3.11+  
-**Status**: Production Ready ✅
+
